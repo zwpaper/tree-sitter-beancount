@@ -1,0 +1,8 @@
+;
+
+2014-02-03 open Assets:US:BofA:Checking
+2014/10/31 open Assets:US:BofA:Credit
+
+2014-04-10 note Assets:US:BofA:Checking "Called to confirm wire transfer"
+
+2014-05-02 balance Assets:US:BofA:Checking 154.20 USD
