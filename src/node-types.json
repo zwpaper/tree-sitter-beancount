@@ -1,0 +1,161 @@
+[
+  {
+    "type": "balance_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "amount",
+          "named": true
+        },
+        {
+          "type": "currency",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "comment_definition",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "entry_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "entry_type_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "entry_type_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "balance_definition",
+          "named": true
+        },
+        {
+          "type": "note_definition",
+          "named": true
+        },
+        {
+          "type": "open_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "note_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "note",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "open_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment_definition",
+          "named": true
+        },
+        {
+          "type": "entry_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "account",
+    "named": true
+  },
+  {
+    "type": "amount",
+    "named": true
+  },
+  {
+    "type": "balance",
+    "named": false
+  },
+  {
+    "type": "currency",
+    "named": true
+  },
+  {
+    "type": "date",
+    "named": true
+  },
+  {
+    "type": "note",
+    "named": true
+  },
+  {
+    "type": "note",
+    "named": false
+  },
+  {
+    "type": "open",
+    "named": false
+  }
+]

@@ -1,0 +1,151 @@
+{
+  "name": "beancount",
+  "rules": {
+    "source_file": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_definition"
+      }
+    },
+    "_definition": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "comment_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "entry_definition"
+        }
+      ]
+    },
+    "entry_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "date"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "entry_type_definition"
+        }
+      ]
+    },
+    "entry_type_definition": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "open_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "note_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "balance_definition"
+        }
+      ]
+    },
+    "open_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "open"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "account"
+        }
+      ]
+    },
+    "note_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "note"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "account"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "note"
+        }
+      ]
+    },
+    "balance_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "balance"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "account"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "amount"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "currency"
+        }
+      ]
+    },
+    "comment_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "account": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z][a-zA-Z:]*"
+    },
+    "date": {
+      "type": "PATTERN",
+      "value": "\\d\\d\\d\\d[-/](0[1-9]|1[0-2])[-/]([012][0-9]|3[0-1])"
+    },
+    "note": {
+      "type": "PATTERN",
+      "value": "\".*\""
+    },
+    "amount": {
+      "type": "PATTERN",
+      "value": "\\d+(.\\d+)?"
+    },
+    "currency": {
+      "type": "PATTERN",
+      "value": "[A-Z]+"
+    },
+    "comment": {
+      "type": "PATTERN",
+      "value": ".?"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
+
