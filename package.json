@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/zwpaper/tree-sitter-beancount/issues"
   },
-  "homepage": "https://github.com/zwpaper/tree-sitter-beancount#readme"
+  "homepage": "https://github.com/zwpaper/tree-sitter-beancount#readme",
+  "dependencies": {
+    "nan": "^2.15.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.1"
+  }
 }
