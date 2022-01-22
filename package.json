@@ -1,0 +1,23 @@
+{
+  "name": "tree-sitter-beancount",
+  "version": "0.1.0",
+  "description": "Tree Sitter for Beancount",
+  "main": "index.js",
+  "scripts": {
+    "test": "tree-sitter generate && tree-sitter parse example-file"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zwpaper/tree-sitter-beancount.git"
+  },
+  "keywords": [
+    "tree-sitter",
+    "beancount"
+  ],
+  "author": "kWeiZh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zwpaper/tree-sitter-beancount/issues"
+  },
+  "homepage": "https://github.com/zwpaper/tree-sitter-beancount#readme"
+}
