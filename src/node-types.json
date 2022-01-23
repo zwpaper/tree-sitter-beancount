@@ -117,6 +117,11 @@
     }
   },
   {
+    "type": "narration",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "note_definition",
     "named": true,
     "fields": {},
@@ -153,6 +158,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "payee",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "source_file",
@@ -194,7 +204,11 @@
           "named": true
         },
         {
-          "type": "note",
+          "type": "narration",
+          "named": true
+        },
+        {
+          "type": "payee",
           "named": true
         }
       ]
@@ -202,6 +216,10 @@
   },
   {
     "type": "!",
+    "named": false
+  },
+  {
+    "type": "\"",
     "named": false
   },
   {
@@ -274,11 +292,11 @@
   },
   {
     "type": "note",
-    "named": true
+    "named": false
   },
   {
     "type": "note",
-    "named": false
+    "named": true
   },
   {
     "type": "open",
