@@ -43,6 +43,18 @@
         },
         {
           "type": "SYMBOL",
+          "name": "close_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "commodity_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "transaction_definition"
+        },
+        {
+          "type": "SYMBOL",
           "name": "note_definition"
         },
         {
@@ -61,6 +73,120 @@
         {
           "type": "SYMBOL",
           "name": "account"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "commodity"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ","
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "commodity"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "close_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "close"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "account"
+        }
+      ]
+    },
+    "commodity_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "commodity"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "commodity"
+        }
+      ]
+    },
+    "transaction_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "*"
+            },
+            {
+              "type": "STRING",
+              "value": "!"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "note"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "account"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "amount"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "commodity"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              }
+            ]
+          }
         }
       ]
     },
@@ -98,7 +224,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "currency"
+          "name": "commodity"
         }
       ]
     },
@@ -108,12 +234,75 @@
         {
           "type": "STRING",
           "value": ";"
+        },
+        {
+          "type": "PATTERN",
+          "value": ".*"
         }
       ]
     },
     "account": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "Assets"
+            },
+            {
+              "type": "STRING",
+              "value": "Liabilities"
+            },
+            {
+              "type": "STRING",
+              "value": "Equity"
+            },
+            {
+              "type": "STRING",
+              "value": "Income"
+            },
+            {
+              "type": "STRING",
+              "value": "Expenses"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ":"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_account_component"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "_account_component": {
       "type": "PATTERN",
-      "value": "[a-zA-Z][a-zA-Z:]*"
+      "value": "[A-Z0-9][a-zA-Z0-9-]*"
+    },
+    "_booking_method": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "STRICT"
+        },
+        {
+          "type": "STRING",
+          "value": "NONE"
+        }
+      ]
     },
     "date": {
       "type": "PATTERN",
@@ -125,15 +314,24 @@
     },
     "amount": {
       "type": "PATTERN",
-      "value": "\\d+(.\\d+)?"
+      "value": "-?\\d+(.\\d+)?"
     },
-    "currency": {
+    "commodity": {
       "type": "PATTERN",
       "value": "[A-Z]+"
     },
     "comment": {
-      "type": "PATTERN",
-      "value": ".?"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ";"
+        },
+        {
+          "type": "PATTERN",
+          "value": ".*"
+        }
+      ]
     }
   },
   "extras": [
