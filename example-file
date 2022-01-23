@@ -19,3 +19,15 @@
 2015-01-01 * "Taxi home from concert in Brooklyn"
   Assets:Cash      -20 USD
   Expenses:Taxi
+
+2014-05-05 * "Cafe Mogador" "Narration"
+  Assets:US:BofA:Checking         100 USD
+  Assets:Cash                    -100 USD
+
+2014-05-05 * "Cafe Mogador" ""
+  Assets:US:BofA:Checking         100 USD
+  Assets:Cash                    -100 USD
+
+2014-05-05 * "Lamb tagine with wine"
+  Assets:US:BofA:Checking         100 USD
+  Assets:Cash                    -100 USD
