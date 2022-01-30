@@ -50,10 +50,7 @@ module.exports = grammar({
         ),
 
         transaction_definition: $ => seq(
-            choice(
-                "*",  // Completed transaction, known amounts.
-                "!",  // Incomplete transaction, needs confirmation or revision
-            ),
+            $.txn,
             choice(
                 seq(
                     $.payee,
@@ -118,6 +115,9 @@ module.exports = grammar({
         payee: $ => seq("\"", repeat(/./), "\""),
         narration: $ => seq("\"", repeat(/./), "\""),
         amount: $ => /-?\d+(.\d+)?/,
+        txn: $ => choice('*',  // Completed transaction, known amounts.
+                         "!",  // Incomplete transaction, needs confirmation or revision
+                        ),
         commodity: $ => /[A-Z]+/,
         comment: $ => seq(';', /.*/)
     }

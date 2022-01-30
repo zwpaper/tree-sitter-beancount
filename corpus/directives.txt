@@ -40,6 +40,7 @@ Open with two Commodities Directive
     (date)
     (open_definition
       (account)
+      (commodity)
       (commodity))))
 
 ==================
@@ -99,7 +100,7 @@ Balance Directive
     (balance_definition
       (account)
       (amount)
-      (commodity)))
+      (commodity))))
 
 ==================
 Transaction only Narration Directive
