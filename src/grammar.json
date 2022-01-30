@@ -135,17 +135,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "*"
-            },
-            {
-              "type": "STRING",
-              "value": "!"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "txn"
         },
         {
           "type": "CHOICE",
@@ -369,6 +360,19 @@
     "amount": {
       "type": "PATTERN",
       "value": "-?\\d+(.\\d+)?"
+    },
+    "txn": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "*"
+        },
+        {
+          "type": "STRING",
+          "value": "!"
+        }
+      ]
     },
     "commodity": {
       "type": "PATTERN",
