@@ -29,37 +29,33 @@
           "name": "date"
         },
         {
-          "type": "SYMBOL",
-          "name": "entry_type_definition"
-        }
-      ]
-    },
-    "entry_type_definition": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "open_definition"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "close_definition"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "commodity_definition"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "transaction_definition"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "note_definition"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "balance_definition"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "open_definition"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "close_definition"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "commodity_definition"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "transaction_definition"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "note_definition"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "balance_definition"
+            }
+          ]
         }
       ]
     },

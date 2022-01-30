@@ -71,25 +71,6 @@
       "required": true,
       "types": [
         {
-          "type": "date",
-          "named": true
-        },
-        {
-          "type": "entry_type_definition",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "entry_type_definition",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
           "type": "balance_definition",
           "named": true
         },
@@ -99,6 +80,10 @@
         },
         {
           "type": "commodity_definition",
+          "named": true
+        },
+        {
+          "type": "date",
           "named": true
         },
         {
