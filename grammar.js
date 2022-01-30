@@ -13,16 +13,14 @@ module.exports = grammar({
 
         entry_definition: $ => seq(
             $.date,
-            $.entry_type_definition,
-        ),
-
-        entry_type_definition: $ => choice(
-            $.open_definition,
-            $.close_definition,
-            $.commodity_definition,
-            $.transaction_definition,
-            $.note_definition,
-            $.balance_definition,
+            choice(
+                $.open_definition,
+                $.close_definition,
+                $.commodity_definition,
+                $.transaction_definition,
+                $.note_definition,
+                $.balance_definition,
+            ),
         ),
 
         open_definition: $ => seq(

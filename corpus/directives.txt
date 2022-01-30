@@ -1,0 +1,197 @@
+==================
+Open Directive
+==================
+
+2014-02-03 open Assets:US:BofA:Checking
+
+---
+
+(source_file
+  (entry_definition
+    (date)
+    (open_definition
+      (account))))
+
+==================
+Open with Commodity Directive
+==================
+
+2014-05-01 open Liabilities:CreditCard:CapitalTwo     USD
+
+---
+
+(source_file
+  (entry_definition
+    (date)
+    (open_definition
+      (account)
+      (commodity))))
+
+==================
+Open with two Commodities Directive
+==================
+
+2014-05-01 open Liabilities:CreditCard:CapitalTwo     USD,CNY
+
+---
+
+(source_file
+  (entry_definition
+    (date)
+    (open_definition
+      (account)
+      (commodity))))
+
+==================
+Close Directive
+==================
+
+2016-11-28 close Liabilities:CreditCard:CapitalOne
+
+---
+
+(source_file
+  (entry_definition
+    (date)
+    (close_definition
+      (account))))
+
+==================
+Commodity Directive
+==================
+
+1867-07-01 commodity CAD
+
+---
+
+(source_file
+  (entry_definition
+    (date)
+    (commodity_definition
+      (commodity))))
+
+==================
+Note Directive
+==================
+
+2014-04-10 note Assets:US:BofA:Checking "Called to confirm wire transfer"
+
+---
+
+(source_file
+  (entry_definition
+    (date)
+    (note_definition
+      (account)
+      (note))))
+
+==================
+Balance Directive
+==================
+
+2014-05-02 balance Assets:US:BofA:Checking 154.20 USD
+
+---
+
+(source_file
+  (entry_definition
+    (date)
+    (balance_definition
+      (account)
+      (amount)
+      (commodity)))
+
+==================
+Transaction only Narration Directive
+==================
+
+2014-02-03 * "Initial deposit"
+  Assets:US:BofA:Checking         100 USD
+  Assets:Cash                    -100 USD
+
+---
+
+(source_file
+  (entry_definition
+    (date)
+    (transaction_definition
+      (txn)
+      (narration)
+      (account)
+      (amount)
+      (commodity)
+      (account)
+      (amount)
+      (commodity))))
+
+==================
+Transaction with Payee and Narration Directive
+==================
+
+2014-05-05 * "Cafe Mogador" "Narration"
+  Assets:US:BofA:Checking         100 USD
+  Assets:Cash                    -100 USD
+
+---
+
+(source_file
+  (entry_definition
+    (date)
+    (transaction_definition
+      (txn)
+      (payee)
+      (narration)
+      (account)
+      (amount)
+      (commodity)
+      (account)
+      (amount)
+      (commodity))))
+
+==================
+Transaction with Empty Narration Directive
+==================
+
+2014-05-05 * "Cafe Mogador" ""
+  Assets:US:BofA:Checking         100 USD
+  Assets:Cash                    -100 USD
+
+---
+
+(source_file
+  (entry_definition
+    (date)
+    (transaction_definition
+      (txn)
+      (payee)
+      (narration)
+      (account)
+      (amount)
+      (commodity)
+      (account)
+      (amount)
+      (commodity))))
+
+==================
+Transaction with Payee and Narration Directive
+==================
+
+2014-05-05 * "Cafe Mogador" "Narration"
+  Assets:US:BofA:Checking         100 USD
+  Assets:Cash                    -100 USD
+
+---
+
+(source_file
+  (entry_definition
+    (date)
+    (transaction_definition
+      (txn)
+      (payee)
+      (narration)
+      (account)
+      (amount)
+      (commodity)
+      (account)
+      (amount)
+      (commodity))))
