@@ -7,10 +7,9 @@ Open Directive
 ---
 
 (source_file
-  (entry_definition
-    (date)
-    (open_definition
-      (account))))
+  (date)
+  (open_definition
+    (account)))
 
 ==================
 Open with Commodity Directive
@@ -21,11 +20,10 @@ Open with Commodity Directive
 ---
 
 (source_file
-  (entry_definition
-    (date)
-    (open_definition
-      (account)
-      (commodity))))
+  (date)
+  (open_definition
+    (account)
+    (commodity)))
 
 ==================
 Open with two Commodities Directive
@@ -36,12 +34,11 @@ Open with two Commodities Directive
 ---
 
 (source_file
-  (entry_definition
-    (date)
-    (open_definition
-      (account)
-      (commodity)
-      (commodity))))
+  (date)
+  (open_definition
+    (account)
+    (commodity)
+    (commodity)))
 
 ==================
 Close Directive
@@ -52,10 +49,9 @@ Close Directive
 ---
 
 (source_file
-  (entry_definition
-    (date)
-    (close_definition
-      (account))))
+  (date)
+  (close_definition
+    (account)))
 
 ==================
 Commodity Directive
@@ -66,10 +62,9 @@ Commodity Directive
 ---
 
 (source_file
-  (entry_definition
-    (date)
-    (commodity_definition
-      (commodity))))
+  (date)
+  (commodity_definition
+    (commodity)))
 
 ==================
 Note Directive
@@ -80,11 +75,10 @@ Note Directive
 ---
 
 (source_file
-  (entry_definition
-    (date)
-    (note_definition
-      (account)
-      (note))))
+  (date)
+  (note_definition
+    (account)
+    (note)))
 
 ==================
 Balance Directive
@@ -95,12 +89,11 @@ Balance Directive
 ---
 
 (source_file
-  (entry_definition
-    (date)
-    (balance_definition
-      (account)
-      (amount)
-      (commodity))))
+  (date)
+  (balance_definition
+    (account)
+    (amount)
+    (commodity)))
 
 ==================
 Transaction only Narration Directive
@@ -113,17 +106,16 @@ Transaction only Narration Directive
 ---
 
 (source_file
-  (entry_definition
-    (date)
-    (transaction_definition
-      (txn)
-      (narration)
-      (account)
-      (amount)
-      (commodity)
-      (account)
-      (amount)
-      (commodity))))
+  (date)
+  (transaction_definition
+    (txn)
+    (narration)
+    (account)
+    (amount)
+    (commodity)
+    (account)
+    (amount)
+    (commodity)))
 
 ==================
 Transaction with Payee and Narration Directive
@@ -136,18 +128,17 @@ Transaction with Payee and Narration Directive
 ---
 
 (source_file
-  (entry_definition
-    (date)
-    (transaction_definition
-      (txn)
-      (payee)
-      (narration)
-      (account)
-      (amount)
-      (commodity)
-      (account)
-      (amount)
-      (commodity))))
+  (date)
+  (transaction_definition
+    (txn)
+    (payee)
+    (narration)
+    (account)
+    (amount)
+    (commodity)
+    (account)
+    (amount)
+    (commodity)))
 
 ==================
 Transaction with Empty Narration Directive
@@ -160,18 +151,17 @@ Transaction with Empty Narration Directive
 ---
 
 (source_file
-  (entry_definition
-    (date)
-    (transaction_definition
-      (txn)
-      (payee)
-      (narration)
-      (account)
-      (amount)
-      (commodity)
-      (account)
-      (amount)
-      (commodity))))
+  (date)
+  (transaction_definition
+    (txn)
+    (payee)
+    (narration)
+    (account)
+    (amount)
+    (commodity)
+    (account)
+    (amount)
+    (commodity)))
 
 ==================
 Transaction with Payee and Narration Directive
@@ -184,15 +174,14 @@ Transaction with Payee and Narration Directive
 ---
 
 (source_file
-  (entry_definition
-    (date)
-    (transaction_definition
-      (txn)
-      (payee)
-      (narration)
-      (account)
-      (amount)
-      (commodity)
-      (account)
-      (amount)
-      (commodity))))
+  (date)
+  (transaction_definition
+    (txn)
+    (payee)
+    (narration)
+    (account)
+    (amount)
+    (commodity)
+    (account)
+    (amount)
+    (commodity)))

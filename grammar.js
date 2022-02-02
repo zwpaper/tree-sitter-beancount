@@ -8,10 +8,10 @@ module.exports = grammar({
 
         _definition: $ => choice(
             $.comment_definition,
-            $.entry_definition,
+            $._entry_definition,
         ),
 
-        entry_definition: $ => seq(
+        _entry_definition: $ => seq(
             $.date,
             choice(
                 $.open_definition,
