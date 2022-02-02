@@ -17,11 +17,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "entry_definition"
+          "name": "_entry_definition"
         }
       ]
     },
-    "entry_definition": {
+    "_entry_definition": {
       "type": "SEQ",
       "members": [
         {

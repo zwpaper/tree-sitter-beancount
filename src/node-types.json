@@ -63,45 +63,6 @@
     }
   },
   {
-    "type": "entry_definition",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "balance_definition",
-          "named": true
-        },
-        {
-          "type": "close_definition",
-          "named": true
-        },
-        {
-          "type": "commodity_definition",
-          "named": true
-        },
-        {
-          "type": "date",
-          "named": true
-        },
-        {
-          "type": "note_definition",
-          "named": true
-        },
-        {
-          "type": "open_definition",
-          "named": true
-        },
-        {
-          "type": "transaction_definition",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "narration",
     "named": true,
     "fields": {}
@@ -158,11 +119,35 @@
       "required": false,
       "types": [
         {
+          "type": "balance_definition",
+          "named": true
+        },
+        {
+          "type": "close_definition",
+          "named": true
+        },
+        {
           "type": "comment_definition",
           "named": true
         },
         {
-          "type": "entry_definition",
+          "type": "commodity_definition",
+          "named": true
+        },
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "note_definition",
+          "named": true
+        },
+        {
+          "type": "open_definition",
+          "named": true
+        },
+        {
+          "type": "transaction_definition",
           "named": true
         }
       ]
