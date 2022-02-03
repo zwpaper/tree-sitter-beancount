@@ -3,11 +3,19 @@ newline = '\n',
 module.exports = grammar({
     name: 'beancount',
 
+    extras: $ => [
+        $.comment,
+        /\s/
+    ],
+
+    conflicts: $ => [
+        [$.account, $.commodity],
+    ],
+
     rules: {
         source_file: $ => repeat($._definition),
 
         _definition: $ => choice(
-            $.comment_definition,
             $._entry_definition,
         ),
 
@@ -49,6 +57,10 @@ module.exports = grammar({
             $.commodity,
         ),
 
+        // Transaction
+        // YYYY-MM-DD [txn|Flag] [[Payee] Narration] [Key: Value] ...
+        //   [Flag] Account Amount [{Cost}] [@ Price] [Key: Value] ...
+        //   [Flag] Account Amount [{Cost}] [@ Price] [Key: Value] ... ...
         transaction_definition: $ => seq(
             $.txn,
             choice(
@@ -59,17 +71,20 @@ module.exports = grammar({
                 $.narration,
             ),
             repeat(
-                seq(
-                    $.account,
-                    optional(
-                        seq(
-                            $.amount,
-                            $.commodity,
-                        ),
-                    ),
-                )
+                $.post_definition,
             )
         ),
+
+        post_definition: $ => seq(
+            $.account,
+            optional(
+                seq(
+                    $.amount,
+                    $.commodity,
+                ),
+            ),
+        ),
+
 
         note_definition: $ => seq(
             'note',
@@ -82,11 +97,6 @@ module.exports = grammar({
             $.account,
             $.amount,
             $.commodity
-        ),
-
-        comment_definition: $ => seq(
-            ';',
-            /.*/,
         ),
 
         account: $ => seq(
@@ -119,6 +129,7 @@ module.exports = grammar({
                          "!",  // Incomplete transaction, needs confirmation or revision
                         ),
         commodity: $ => /[A-Z]+/,
+
         comment: $ => seq(';', /.*/)
     }
 });

@@ -110,12 +110,14 @@ Transaction only Narration Directive
   (transaction_definition
     (txn)
     (narration)
-    (account)
-    (amount)
-    (commodity)
-    (account)
-    (amount)
-    (commodity)))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))))
 
 ==================
 Transaction with Payee and Narration Directive
@@ -133,12 +135,14 @@ Transaction with Payee and Narration Directive
     (txn)
     (payee)
     (narration)
-    (account)
-    (amount)
-    (commodity)
-    (account)
-    (amount)
-    (commodity)))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))))
 
 ==================
 Transaction with Empty Narration Directive
@@ -156,12 +160,14 @@ Transaction with Empty Narration Directive
     (txn)
     (payee)
     (narration)
-    (account)
-    (amount)
-    (commodity)
-    (account)
-    (amount)
-    (commodity)))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))))
 
 ==================
 Transaction with Payee and Narration Directive
@@ -179,9 +185,11 @@ Transaction with Payee and Narration Directive
     (txn)
     (payee)
     (narration)
-    (account)
-    (amount)
-    (commodity)
-    (account)
-    (amount)
-    (commodity)))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))))
