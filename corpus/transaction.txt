@@ -93,7 +93,7 @@ Transaction with Price Rate
       (amount)
       (commodity)
       (price
-        (amount)
+        (unsigned_amount)
         (commodity)))
     (post_definition
       (account)
@@ -121,7 +121,7 @@ Transaction with Price
       (amount)
       (commodity)
       (price
-        (amount)
+        (unsigned_amount)
         (commodity)))
     (post_definition
       (account)
@@ -148,7 +148,7 @@ Transaction with Cost
       (amount)
       (commodity)
       (cost
-        (amount)
+        (unsigned_amount)
         (commodity)))
     (post_definition
       (account)
@@ -176,10 +176,10 @@ Transaction with Cost and Price
       (amount)
       (commodity)
       (cost
-        (amount)
+        (unsigned_amount)
         (commodity))
       (price
-        (amount)        
+        (unsigned_amount)
         (commodity)))
     (post_definition
       (account)

@@ -95,13 +95,13 @@ module.exports = grammar({
 
         price: $ => seq(
             /@{1,2}/,
-            $.amount,
+            $.unsigned_amount,
             $.commodity,
         ),
 
         cost: $ => seq(
             '{',
-            $.amount,
+            $.unsigned_amount,
             $.commodity,
             '}',
         ),
@@ -144,6 +144,7 @@ module.exports = grammar({
         note: $ => /".*"/,
         payee: $ => seq("\"", repeat(/./), "\""),
         narration: $ => seq("\"", repeat(/./), "\""),
+        unsigned_amount: $ => /\d+(.\d+)?/,
         amount: $ => /-?\d+(.\d+)?/,
         txn: $ => choice('*',  // Completed transaction, known amounts.
                          "!",  // Incomplete transaction, needs confirmation or revision
