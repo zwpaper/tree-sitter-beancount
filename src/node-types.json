@@ -71,11 +71,11 @@
       "required": true,
       "types": [
         {
-          "type": "amount",
+          "type": "commodity",
           "named": true
         },
         {
-          "type": "commodity",
+          "type": "unsigned_amount",
           "named": true
         }
       ]
@@ -169,11 +169,11 @@
       "required": true,
       "types": [
         {
-          "type": "amount",
+          "type": "commodity",
           "named": true
         },
         {
-          "type": "commodity",
+          "type": "unsigned_amount",
           "named": true
         }
       ]
@@ -328,15 +328,19 @@
   },
   {
     "type": "note",
-    "named": false
+    "named": true
   },
   {
     "type": "note",
-    "named": true
+    "named": false
   },
   {
     "type": "open",
     "named": false
+  },
+  {
+    "type": "unsigned_amount",
+    "named": true
   },
   {
     "type": "{",

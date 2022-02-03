@@ -228,7 +228,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "amount"
+          "name": "unsigned_amount"
         },
         {
           "type": "SYMBOL",
@@ -245,7 +245,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "amount"
+          "name": "unsigned_amount"
         },
         {
           "type": "SYMBOL",
@@ -405,6 +405,10 @@
           "value": "\""
         }
       ]
+    },
+    "unsigned_amount": {
+      "type": "PATTERN",
+      "value": "\\d+(.\\d+)?"
     },
     "amount": {
       "type": "PATTERN",
