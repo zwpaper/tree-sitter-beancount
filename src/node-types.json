@@ -63,6 +63,25 @@
     }
   },
   {
+    "type": "cost",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "amount",
+          "named": true
+        },
+        {
+          "type": "commodity",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "narration",
     "named": true,
     "fields": {}
@@ -122,6 +141,33 @@
           "type": "account",
           "named": true
         },
+        {
+          "type": "amount",
+          "named": true
+        },
+        {
+          "type": "commodity",
+          "named": true
+        },
+        {
+          "type": "cost",
+          "named": true
+        },
+        {
+          "type": "price",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "price",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
         {
           "type": "amount",
           "named": true
@@ -290,6 +336,14 @@
   },
   {
     "type": "open",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
     "named": false
   }
 ]

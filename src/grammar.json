@@ -185,6 +185,30 @@
                 {
                   "type": "SYMBOL",
                   "name": "commodity"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "cost"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "price"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
                 }
               ]
             },
@@ -192,6 +216,44 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "price": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "@{1,2}"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "amount"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "commodity"
+        }
+      ]
+    },
+    "cost": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "amount"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "commodity"
+        },
+        {
+          "type": "STRING",
+          "value": "}"
         }
       ]
     },
