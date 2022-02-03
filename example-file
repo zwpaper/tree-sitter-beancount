@@ -1,6 +1,9 @@
 2014-02-03 open Assets:US:BofA:Checking
 2014/10/31 open Assets:US:BofA:Credit
 2014/01/01 open Assets:Cash
+2014/01/01 open Assets:ETrade:IVV
+2014/01/01 open Assets:ETrade:Cash
+2014/01/01 open Income:ETrade:CapitalGains
 2014-05-01 open Liabilities:CreditCard:CapitalOne     USD
 2014-05-01 open Liabilities:CreditCard:CapitalTwo     USD,CNY
 2014-05-01 open Expenses:Taxi
@@ -35,3 +38,14 @@
   Assets:US:BofA:Checking         100 USD
   Assets:Cash                    -100 USD
 
+2014-07-11 * "Sold shares of S&P 500"
+  Assets:ETrade:IVV               -10 IVV @ 197.90 USD
+  Assets:ETrade:Cash           1979.00 USD
+;Comment this Income, let bean-check check the balance
+;  Income:ETrade:CapitalGains
+
+2014-07-11 * "Sold shares of S&P 500"
+  Assets:ETrade:IVV               -10 IVV @@ 197.90 USD
+  Assets:ETrade:Cash           197.90 USD
+;Comment this Income, let bean-check check the balance
+;  Income:ETrade:CapitalGains

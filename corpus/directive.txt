@@ -1,0 +1,96 @@
+==================
+Open Directive
+==================
+
+2014-02-03 open Assets:US:BofA:Checking
+
+---
+
+(source_file
+  (date)
+  (open_definition
+    (account)))
+
+==================
+Open with Commodity Directive
+==================
+
+2014-05-01 open Liabilities:CreditCard:CapitalTwo     USD
+
+---
+
+(source_file
+  (date)
+  (open_definition
+    (account)
+    (commodity)))
+
+==================
+Open with two Commodities Directive
+==================
+
+2014-05-01 open Liabilities:CreditCard:CapitalTwo     USD,CNY
+
+---
+
+(source_file
+  (date)
+  (open_definition
+    (account)
+    (commodity)
+    (commodity)))
+
+==================
+Close Directive
+==================
+
+2016-11-28 close Liabilities:CreditCard:CapitalOne
+
+---
+
+(source_file
+  (date)
+  (close_definition
+    (account)))
+
+==================
+Commodity Directive
+==================
+
+1867-07-01 commodity CAD
+
+---
+
+(source_file
+  (date)
+  (commodity_definition
+    (commodity)))
+
+==================
+Note Directive
+==================
+
+2014-04-10 note Assets:US:BofA:Checking "Called to confirm wire transfer"
+
+---
+
+(source_file
+  (date)
+  (note_definition
+    (account)
+    (note)))
+
+==================
+Balance Directive
+==================
+
+2014-05-02 balance Assets:US:BofA:Checking 154.20 USD
+
+---
+
+(source_file
+  (date)
+  (balance_definition
+    (account)
+    (amount)
+    (commodity)))

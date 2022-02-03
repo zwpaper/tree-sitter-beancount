@@ -1,0 +1,189 @@
+==================
+Transaction only Narration Directive
+==================
+
+2014-02-03 * "Initial deposit"
+  Assets:US:BofA:Checking         100 USD
+  Assets:Cash                    -100 USD
+
+---
+
+(source_file
+  (date)
+  (transaction_definition
+    (txn)
+    (narration)
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))))
+
+==================
+Transaction with Payee and Narration Directive
+==================
+
+2014-05-05 * "Cafe Mogador" "Narration"
+  Assets:US:BofA:Checking         100 USD
+  Assets:Cash                    -100 USD
+
+---
+
+(source_file
+  (date)
+  (transaction_definition
+    (txn)
+    (payee)
+    (narration)
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))))
+
+==================
+Transaction with Empty Narration Directive
+==================
+
+2014-05-05 * "Cafe Mogador" ""
+  Assets:US:BofA:Checking         100 USD
+  Assets:Cash                    -100 USD
+
+---
+
+(source_file
+  (date)
+  (transaction_definition
+    (txn)
+    (payee)
+    (narration)
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))))
+
+==================
+Transaction with Price Rate
+==================
+
+2014-05-05 * "Cafe Mogador" "Narration"
+  Assets:US:BofA:Checking        -400.00 USD @ 1.09 CAD
+  Assets:Cash                     436.01 CAD
+
+---
+
+(source_file
+  (date)
+  (transaction_definition
+    (txn)
+    (payee)
+    (narration)
+    (post_definition
+      (account)
+      (amount)
+      (commodity)
+      (price
+        (amount)
+        (commodity)))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))))
+
+==================
+Transaction with Price
+==================
+
+2014-05-05 * "Cafe Mogador" "Narration"
+  Assets:US:BofA:Checking        -400.00 USD @@ 436.01 CAD
+  Assets:Cash                     436.01 CAD
+
+---
+
+(source_file
+  (date)
+  (transaction_definition
+    (txn)
+    (payee)
+    (narration)
+    (post_definition
+      (account)
+      (amount)
+      (commodity)
+      (price
+        (amount)
+        (commodity)))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))))
+
+==================
+Transaction with Cost
+==================
+
+2014-02-11 * "Bought shares of S&P 500"
+  Assets:ETrade:IVV                10 IVV {183.07 USD}
+  Assets:ETrade:Cash         -1830.70 USD
+
+---
+
+(source_file
+  (date)
+  (transaction_definition
+    (txn)
+    (narration)
+    (post_definition
+      (account)
+      (amount)
+      (commodity)
+      (cost
+        (amount)
+        (commodity)))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))))
+
+==================
+Transaction with Cost and Price
+==================
+
+2014-07-11 * "Sold shares of S&P 500"
+  Assets:ETrade:IVV               -10 IVV {183.07 USD} @ 197.90 USD
+  Assets:ETrade:Cash          1979.90 USD
+  Income:ETrade:CapitalGains
+
+---
+
+(source_file
+  (date)
+  (transaction_definition
+    (txn)
+    (narration)
+    (post_definition
+      (account)
+      (amount)
+      (commodity)
+      (cost
+        (amount)
+        (commodity))
+      (price
+        (amount)        
+        (commodity)))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (post_definition
+      (account))))

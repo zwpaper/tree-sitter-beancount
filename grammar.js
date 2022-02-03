@@ -81,10 +81,30 @@ module.exports = grammar({
                 seq(
                     $.amount,
                     $.commodity,
+                    // Beancount does NOT support cost after price
+                    // So that do not have to check the reverse
+                    optional(
+                        $.cost,
+                    ),
+                    optional(
+                        $.price,
+                    ),
                 ),
             ),
         ),
 
+        price: $ => seq(
+            /@{1,2}/,
+            $.amount,
+            $.commodity,
+        ),
+
+        cost: $ => seq(
+            '{',
+            $.amount,
+            $.commodity,
+            '}',
+        ),
 
         note_definition: $ => seq(
             'note',
