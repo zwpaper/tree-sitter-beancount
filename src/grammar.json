@@ -13,10 +13,6 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "comment_definition"
-        },
-        {
-          "type": "SYMBOL",
           "name": "_entry_definition"
         }
       ]
@@ -163,35 +159,39 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "account"
-              },
-              {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "SEQ",
-                    "members": [
-                      {
-                        "type": "SYMBOL",
-                        "name": "amount"
-                      },
-                      {
-                        "type": "SYMBOL",
-                        "name": "commodity"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "BLANK"
-                  }
-                ]
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "post_definition"
           }
+        }
+      ]
+    },
+    "post_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "account"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "amount"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "commodity"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -230,19 +230,6 @@
         {
           "type": "SYMBOL",
           "name": "commodity"
-        }
-      ]
-    },
-    "comment_definition": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": ";"
-        },
-        {
-          "type": "PATTERN",
-          "value": ".*"
         }
       ]
     },
@@ -394,11 +381,20 @@
   },
   "extras": [
     {
+      "type": "SYMBOL",
+      "name": "comment"
+    },
+    {
       "type": "PATTERN",
       "value": "\\s"
     }
   ],
-  "conflicts": [],
+  "conflicts": [
+    [
+      "account",
+      "commodity"
+    ]
+  ],
   "precedences": [],
   "externals": [],
   "inline": [],

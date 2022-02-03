@@ -43,7 +43,7 @@
     }
   },
   {
-    "type": "comment_definition",
+    "type": "comment",
     "named": true,
     "fields": {}
   },
@@ -111,6 +111,29 @@
     "fields": {}
   },
   {
+    "type": "post_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "amount",
+          "named": true
+        },
+        {
+          "type": "commodity",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "fields": {},
@@ -124,10 +147,6 @@
         },
         {
           "type": "close_definition",
-          "named": true
-        },
-        {
-          "type": "comment_definition",
           "named": true
         },
         {
@@ -162,23 +181,15 @@
       "required": true,
       "types": [
         {
-          "type": "account",
-          "named": true
-        },
-        {
-          "type": "amount",
-          "named": true
-        },
-        {
-          "type": "commodity",
-          "named": true
-        },
-        {
           "type": "narration",
           "named": true
         },
         {
           "type": "payee",
+          "named": true
+        },
+        {
+          "type": "post_definition",
           "named": true
         },
         {
