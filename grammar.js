@@ -75,12 +75,14 @@ module.exports = grammar({
         //   [Flag] Account Amount [{Cost}] [@ Price] [Key: Value] ... ...
         transaction_definition: $ => seq(
             $.txn,
-            choice(
-                seq(
-                    $.payee,
+            optional(
+                choice(
+                    seq(
+                        $.payee,
+                        $.narration,
+                    ),
                     $.narration,
                 ),
-                $.narration,
             ),
             repeat(
                 choice(

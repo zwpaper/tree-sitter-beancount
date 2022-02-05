@@ -1,4 +1,25 @@
 ==================
+Transaction without Narration or Payee Directive
+==================
+
+2014-06-01 *
+  Assets:Investing:Apple       5 AAPL
+  Equity:Opening-Balances
+
+---
+
+(source_file
+  (date)
+  (transaction_definition
+    (txn)
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (post_definition
+      (account))))
+
+==================
 Transaction only Narration Directive
 ==================
 

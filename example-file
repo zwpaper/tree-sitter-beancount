@@ -66,3 +66,17 @@ poptag #this-is-a-tag
 ;Comment this Income, let bean-check check the balance
 ;  Income:ETrade:CapitalGains
 
+2014-01-01 open Assets:Investing
+2014-01-01 open Assets:Investing:Apple       AAPL
+2014-01-01 open Assets:Investing:Amazon      AMZN
+2014-01-01 open Assets:Investing:Microsoft   MSFT
+
+2014-06-01 *
+  Assets:Investing:Apple       5 AAPL {578.23 USD}
+  Assets:Investing:Amazon      5 AMZN {346.20 USD}
+  Assets:Investing:Microsoft   5 MSFT {42.09 USD}
+  Equity:Opening-Balances
+
+2014-07-13 balance Assets:Investing 5 AAPL
+2014-07-13 balance Assets:Investing 5 AMZN
+2014-07-13 balance Assets:Investing 5 MSFT
