@@ -14,6 +14,40 @@
         {
           "type": "SYMBOL",
           "name": "_entry_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "pushtag_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "poptag_definition"
+        }
+      ]
+    },
+    "pushtag_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "pushtag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tag"
+        }
+      ]
+    },
+    "poptag_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "poptag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tag"
         }
       ]
     },
@@ -159,6 +193,22 @@
         {
           "type": "REPEAT",
           "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "tag"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "link"
+              }
+            ]
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
             "type": "SYMBOL",
             "name": "post_definition"
           }
@@ -256,6 +306,14 @@
           "value": "}"
         }
       ]
+    },
+    "tag": {
+      "type": "PATTERN",
+      "value": "#(-|\\w)+"
+    },
+    "link": {
+      "type": "PATTERN",
+      "value": "\\^(-|\\w)+"
     },
     "note_definition": {
       "type": "SEQ",
