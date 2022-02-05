@@ -187,3 +187,114 @@ Transaction with Cost and Price
       (commodity))
     (post_definition
       (account))))
+
+==================
+Transaction with Tags
+==================
+
+2014-05-05 * "Cafe Mogador" "Narration" #this-is_a_tag #this-is_another_tag
+  Assets:US:BofA:Checking        -400.00 USD
+  Assets:Cash                     436.01 CAD
+
+---
+
+(source_file
+  (date)
+  (transaction_definition
+    (txn)
+    (payee)
+    (narration)
+    (tag)
+    (tag)
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))))
+
+==================
+Transaction with Links
+==================
+
+2014-05-05 * "Cafe Mogador" "Narration" ^this-is_a_link ^this-is_another_link
+  Assets:US:BofA:Checking        -400.00 USD
+  Assets:Cash                     436.01 CAD
+
+---
+
+(source_file
+  (date)
+  (transaction_definition
+    (txn)
+    (payee)
+    (narration)
+    (link)
+    (link)
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))))
+
+==================
+Transaction mix Links and Tag
+==================
+
+2014-05-05 * "Cafe Mogador" "Narration" ^this-is_a_link #this-is-tag ^this-is_another_link
+  Assets:US:BofA:Checking        -400.00 USD
+  Assets:Cash                     436.01 CAD
+
+---
+
+(source_file
+  (date)
+  (transaction_definition
+    (txn)
+    (payee)
+    (narration)
+    (link)
+    (tag)
+    (link)
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))))
+
+
+==================
+Transaction with Tags and Link
+==================
+
+2014-05-05 * "Cafe Mogador" "Narration" #this-is_a_tag ^this-is-a-link #this-is_another_tag
+  Assets:US:BofA:Checking        -400.00 USD
+  Assets:Cash                     436.01 CAD
+
+---
+
+(source_file
+  (date)
+  (transaction_definition
+    (txn)
+    (payee)
+    (narration)
+    (tag)
+    (link)
+    (tag)
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))))

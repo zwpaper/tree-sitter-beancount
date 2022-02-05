@@ -27,7 +27,7 @@ Inline Comments
     (comment))
 
 ==================
-Standalone comments
+Standalone Comments
 ==================
 
 ; comment line 1
@@ -54,3 +54,25 @@ Standalone comments
       (account)
       (amount)
       (commodity))))
+
+==================
+Push Tag
+==================
+
+pushtag #tag
+---
+
+(source_file
+  (pushtag_definition
+    (tag)))
+
+==================
+Pop Tag
+==================
+
+poptag #tag
+---
+
+(source_file
+  (poptag_definition
+    (tag)))

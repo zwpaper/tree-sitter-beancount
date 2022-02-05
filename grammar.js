@@ -17,7 +17,19 @@ module.exports = grammar({
 
         _definition: $ => choice(
             $._entry_definition,
+            $.pushtag_definition,
+            $.poptag_definition,
         ),
+
+        pushtag_definition: $ => seq(
+            'pushtag',
+            $.tag,
+        ),
+        poptag_definition: $ => seq(
+            'poptag',
+            $.tag,
+        ),
+
 
         _entry_definition: $ => seq(
             $.date,
@@ -71,6 +83,12 @@ module.exports = grammar({
                 $.narration,
             ),
             repeat(
+                choice(
+                    $.tag,
+                    $.link,
+                ),
+            ),
+            repeat(
                 $.post_definition,
             )
         ),
@@ -105,6 +123,9 @@ module.exports = grammar({
             $.commodity,
             '}',
         ),
+
+        tag: $ => /#(-|\w)+/,
+        link: $ => /\^(-|\w)+/,
 
         note_definition: $ => seq(
             'note',

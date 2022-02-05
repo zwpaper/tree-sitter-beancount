@@ -34,18 +34,35 @@
   Assets:US:BofA:Checking         100 USD
   Assets:Cash                    -100 USD
 
+pushtag #this-is-a-tag
+
 2014-05-05 * "Lamb tagine with wine"
   Assets:US:BofA:Checking         100 USD
   Assets:Cash                    -100 USD
 
-2014-07-11 * "Sold shares of S&P 500"
+poptag #this-is-a-tag
+
+2014-07-11 * "Sold shares of S&P 500"  #-this_is_tag- #this-is-another-tag
   Assets:ETrade:IVV               -10 IVV @ 197.90 USD
   Assets:ETrade:Cash           1979.00 USD
 ;Comment this Income, let bean-check check the balance
 ;  Income:ETrade:CapitalGains
 
-2014-07-11 * "Sold shares of S&P 500"
+2014-07-11 * "Sold shares of S&P 500" #-this_is_tag- ^this-is-link
   Assets:ETrade:IVV               -10 IVV @@ 197.90 USD
   Assets:ETrade:Cash           197.90 USD
 ;Comment this Income, let bean-check check the balance
 ;  Income:ETrade:CapitalGains
+
+2014-07-11 * "Sold shares of S&P 500" ^this-is-link #-this_is_tag-
+  Assets:ETrade:IVV               -10 IVV @ 197.90 USD
+  Assets:ETrade:Cash           1979.00 USD
+;Comment this Income, let bean-check check the balance
+;  Income:ETrade:CapitalGains
+
+2014-07-11 * "Sold shares of S&P 500" ^this-is-link ^this-is_link-too
+  Assets:ETrade:IVV               -10 IVV @ 197.90 USD
+  Assets:ETrade:Cash           1979.00 USD
+;Comment this Income, let bean-check check the balance
+;  Income:ETrade:CapitalGains
+
