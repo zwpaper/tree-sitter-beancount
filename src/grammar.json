@@ -172,11 +172,20 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SEQ",
+              "type": "CHOICE",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "payee"
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "payee"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "narration"
+                    }
+                  ]
                 },
                 {
                   "type": "SYMBOL",
@@ -185,8 +194,7 @@
               ]
             },
             {
-              "type": "SYMBOL",
-              "name": "narration"
+              "type": "BLANK"
             }
           ]
         },
