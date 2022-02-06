@@ -83,7 +83,15 @@
             },
             {
               "type": "SYMBOL",
+              "name": "document_definition"
+            },
+            {
+              "type": "SYMBOL",
               "name": "balance_definition"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "pad_definition"
             }
           ]
         }
@@ -340,6 +348,27 @@
         }
       ]
     },
+    "document_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "document"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "account"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "filepath"
+        }
+      ]
+    },
+    "filepath": {
+      "type": "PATTERN",
+      "value": "\".+\""
+    },
     "balance_definition": {
       "type": "SEQ",
       "members": [
@@ -358,6 +387,27 @@
         {
           "type": "SYMBOL",
           "name": "commodity"
+        }
+      ]
+    },
+    "pad_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "pad"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "account"
+        },
+        {
+          "type": "FIELD",
+          "name": "pad",
+          "content": {
+            "type": "SYMBOL",
+            "name": "account"
+          }
         }
       ]
     },

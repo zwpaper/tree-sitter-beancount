@@ -82,6 +82,25 @@
     }
   },
   {
+    "type": "document_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "filepath",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "narration",
     "named": true,
     "fields": {}
@@ -119,6 +138,32 @@
         },
         {
           "type": "commodity",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pad_definition",
+    "named": true,
+    "fields": {
+      "pad": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "account",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
           "named": true
         }
       ]
@@ -234,11 +279,19 @@
           "named": true
         },
         {
+          "type": "document_definition",
+          "named": true
+        },
+        {
           "type": "note_definition",
           "named": true
         },
         {
           "type": "open_definition",
+          "named": true
+        },
+        {
+          "type": "pad_definition",
           "named": true
         },
         {
@@ -373,6 +426,14 @@
     "named": true
   },
   {
+    "type": "document",
+    "named": false
+  },
+  {
+    "type": "filepath",
+    "named": true
+  },
+  {
     "type": "link",
     "named": true
   },
@@ -386,6 +447,10 @@
   },
   {
     "type": "open",
+    "named": false
+  },
+  {
+    "type": "pad",
     "named": false
   },
   {
