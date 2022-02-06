@@ -39,7 +39,9 @@ module.exports = grammar({
                 $.commodity_definition,
                 $.transaction_definition,
                 $.note_definition,
+                $.document_definition,
                 $.balance_definition,
+                $.pad_definition,
             ),
         ),
 
@@ -135,11 +137,25 @@ module.exports = grammar({
             $.note,
         ),
 
+        document_definition: $ => seq(
+            'document',
+            $.account,
+            $.filepath,
+        ),
+
+        filepath: $ => /".+"/,
+
         balance_definition: $ => seq(
             'balance',
             $.account,
             $.amount,
             $.commodity
+        ),
+
+        pad_definition: $ => seq(
+            'pad',
+            $.account,
+            field('pad', $.account),
         ),
 
         account: $ => seq(

@@ -80,3 +80,8 @@ poptag #this-is-a-tag
 2014-07-13 balance Assets:Investing 5 AAPL
 2014-07-13 balance Assets:Investing 5 AMZN
 2014-07-13 balance Assets:Investing 5 MSFT
+
+2014-06-01 pad Assets:Cash Equity:Opening-Balances
+2014-06-02 balance Assets:Cash 100 USD
+
+2014-11-03 document Liabilities:CreditCard:CapitalTwo "/home/joe/stmts/apr-2014.pdf"

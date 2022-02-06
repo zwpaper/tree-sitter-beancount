@@ -81,6 +81,20 @@ Note Directive
     (note)))
 
 ==================
+Document Directive
+==================
+
+2014-11-03 document Liabilities:CreditCard:CapitalTwo "/home/joe/stmts/apr-2014.pdf"
+
+---
+
+(source_file
+  (date)
+  (document_definition
+    (account)
+    (filepath)))
+
+==================
 Balance Directive
 ==================
 
@@ -94,3 +108,17 @@ Balance Directive
     (account)
     (amount)
     (commodity)))
+
+==================
+Pad Directive
+==================
+
+2014-05-02 pad Assets:US:BofA:Checking Equity:Opening-Balances
+
+---
+
+(source_file
+  (date)
+  (pad_definition
+    (account)
+    (account)))
