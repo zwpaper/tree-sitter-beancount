@@ -44,6 +44,7 @@ module.exports = grammar({
                 $.balance_definition,
                 $.price_definition,
                 $.pad_definition,
+                $.custom_definition,
             ),
         ),
 
@@ -173,6 +174,20 @@ module.exports = grammar({
             field('pad', $.account),
         ),
 
+        custom_definition: $ => seq(
+            'custom',
+            field('type_name', $.text),
+            repeat(
+                $.uncheck,
+            ),
+        ),
+
+        uncheck: $ => choice(
+            $.text,
+            /\S+/,
+        ),
+
+
         account: $ => seq(
             choice(
                 "Assets",
@@ -199,9 +214,10 @@ module.exports = grammar({
         text: $ => seq("\"", repeat(/./), "\""),
         unsigned_amount: $ => /\d+(.\d+)?/,
         amount: $ => /-?\d+(.\d+)?/,
-        txn: $ => choice('*',  // Completed transaction, known amounts.
-                         "!",  // Incomplete transaction, needs confirmation or revision
-                        ),
+        txn: $ => choice(
+            '*',  // Completed transaction, known amounts.
+            "!",  // Incomplete transaction, needs confirmation or revision
+        ),
         commodity: $ => /[A-Z]+/,
 
         comment: $ => seq(';', /.*/)

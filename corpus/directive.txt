@@ -151,3 +151,20 @@ Price Directive
     (commodity)
     (amount)
     (commodity)))
+
+==================
+Custom Directive
+==================
+
+2014-07-09 custom "budget" "..." TRUE 45.30 USD
+
+---
+
+(source_file
+  (date)
+  (custom_definition
+    (text)
+    (uncheck)
+    (uncheck)
+    (uncheck)
+    (uncheck)))
