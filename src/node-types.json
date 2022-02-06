@@ -82,6 +82,32 @@
     }
   },
   {
+    "type": "custom_definition",
+    "named": true,
+    "fields": {
+      "type_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "text",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "uncheck",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "document_definition",
     "named": true,
     "fields": {},
@@ -310,6 +336,10 @@
           "named": true
         },
         {
+          "type": "custom_definition",
+          "named": true
+        },
+        {
           "type": "date",
           "named": true
         },
@@ -411,6 +441,21 @@
     "fields": {}
   },
   {
+    "type": "uncheck",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "!",
     "named": false
   },
@@ -481,6 +526,10 @@
   {
     "type": "commodity",
     "named": true
+  },
+  {
+    "type": "custom",
+    "named": false
   },
   {
     "type": "date",
