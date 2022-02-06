@@ -33,7 +33,7 @@ Transaction only Narration Directive
   (date)
   (transaction_definition
     (txn)
-    (narration)
+    (text)
     (post_definition
       (account)
       (amount)
@@ -57,8 +57,8 @@ Transaction with Payee and Narration Directive
   (date)
   (transaction_definition
     (txn)
-    (payee)
-    (narration)
+    (text)
+    (text)
     (post_definition
       (account)
       (amount)
@@ -82,8 +82,8 @@ Transaction with Empty Narration Directive
   (date)
   (transaction_definition
     (txn)
-    (payee)
-    (narration)
+    (text)
+    (text)
     (post_definition
       (account)
       (amount)
@@ -107,8 +107,8 @@ Transaction with Price Rate
   (date)
   (transaction_definition
     (txn)
-    (payee)
-    (narration)
+    (text)
+    (text)
     (post_definition
       (account)
       (amount)
@@ -135,8 +135,8 @@ Transaction with Price
   (date)
   (transaction_definition
     (txn)
-    (payee)
-    (narration)
+    (text)
+    (text)
     (post_definition
       (account)
       (amount)
@@ -163,7 +163,7 @@ Transaction with Cost
   (date)
   (transaction_definition
     (txn)
-    (narration)
+    (text)
     (post_definition
       (account)
       (amount)
@@ -191,7 +191,7 @@ Transaction with Cost and Price
   (date)
   (transaction_definition
     (txn)
-    (narration)
+    (text)
     (post_definition
       (account)
       (amount)
@@ -223,8 +223,8 @@ Transaction with Tags
   (date)
   (transaction_definition
     (txn)
-    (payee)
-    (narration)
+    (text)
+    (text)
     (tag)
     (tag)
     (post_definition
@@ -250,8 +250,8 @@ Transaction with Links
   (date)
   (transaction_definition
     (txn)
-    (payee)
-    (narration)
+    (text)
+    (text)
     (link)
     (link)
     (post_definition
@@ -277,8 +277,8 @@ Transaction mix Links and Tag
   (date)
   (transaction_definition
     (txn)
-    (payee)
-    (narration)
+    (text)
+    (text)
     (link)
     (tag)
     (link)
@@ -306,8 +306,8 @@ Transaction with Tags and Link
   (date)
   (transaction_definition
     (txn)
-    (payee)
-    (narration)
+    (text)
+    (text)
     (tag)
     (link)
     (tag)

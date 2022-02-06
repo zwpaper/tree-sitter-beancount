@@ -12,8 +12,8 @@ Inline Comments
   (date)
   (transaction_definition
     (txn)
-    (payee)
-    (narration)
+    (text)
+    (text)
     (comment)
     (post_definition
       (account)
@@ -44,8 +44,8 @@ Standalone Comments
   (date)
   (transaction_definition
     (txn)
-    (payee)
-    (narration)
+    (text)
+    (text)
     (post_definition
       (account)
       (amount)

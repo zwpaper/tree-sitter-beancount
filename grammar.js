@@ -80,10 +80,10 @@ module.exports = grammar({
             optional(
                 choice(
                     seq(
-                        $.payee,
-                        $.narration,
+                        field('payee', $.text),
+                        field('narration', $.text),
                     ),
-                    $.narration,
+                    field('narration', $.text),
                 ),
             ),
             repeat(
@@ -181,8 +181,7 @@ module.exports = grammar({
         ),
         date: $ => /\d\d\d\d[-/](0[1-9]|1[0-2])[-/]([012][0-9]|3[0-1])/,
         note: $ => /".*"/,
-        payee: $ => seq("\"", repeat(/./), "\""),
-        narration: $ => seq("\"", repeat(/./), "\""),
+        text: $ => seq("\"", repeat(/./), "\""),
         unsigned_amount: $ => /\d+(.\d+)?/,
         amount: $ => /-?\d+(.\d+)?/,
         txn: $ => choice('*',  // Completed transaction, known amounts.
