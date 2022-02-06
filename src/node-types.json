@@ -101,9 +101,30 @@
     }
   },
   {
-    "type": "narration",
+    "type": "event_definition",
     "named": true,
-    "fields": {}
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "text",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "text",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "note_definition",
@@ -168,11 +189,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "payee",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "poptag_definition",
@@ -240,6 +256,25 @@
     }
   },
   {
+    "type": "price_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "amount",
+          "named": true
+        },
+        {
+          "type": "commodity",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "pushtag_definition",
     "named": true,
     "fields": {},
@@ -283,6 +318,10 @@
           "named": true
         },
         {
+          "type": "event_definition",
+          "named": true
+        },
+        {
           "type": "note_definition",
           "named": true
         },
@@ -299,6 +338,10 @@
           "named": true
         },
         {
+          "type": "price_definition",
+          "named": true
+        },
+        {
           "type": "pushtag_definition",
           "named": true
         },
@@ -310,23 +353,41 @@
     }
   },
   {
+    "type": "text",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "transaction_definition",
     "named": true,
-    "fields": {},
+    "fields": {
+      "narration": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "text",
+            "named": true
+          }
+        ]
+      },
+      "payee": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "text",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "link",
-          "named": true
-        },
-        {
-          "type": "narration",
-          "named": true
-        },
-        {
-          "type": "payee",
           "named": true
         },
         {
@@ -430,6 +491,10 @@
     "named": false
   },
   {
+    "type": "event",
+    "named": false
+  },
+  {
     "type": "filepath",
     "named": true
   },
@@ -455,6 +520,10 @@
   },
   {
     "type": "poptag",
+    "named": false
+  },
+  {
+    "type": "price",
     "named": false
   },
   {

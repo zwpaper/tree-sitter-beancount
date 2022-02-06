@@ -87,7 +87,15 @@
             },
             {
               "type": "SYMBOL",
+              "name": "event_definition"
+            },
+            {
+              "type": "SYMBOL",
               "name": "balance_definition"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "price_definition"
             },
             {
               "type": "SYMBOL",
@@ -186,18 +194,30 @@
                   "type": "SEQ",
                   "members": [
                     {
-                      "type": "SYMBOL",
-                      "name": "payee"
+                      "type": "FIELD",
+                      "name": "payee",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "text"
+                      }
                     },
                     {
-                      "type": "SYMBOL",
-                      "name": "narration"
+                      "type": "FIELD",
+                      "name": "narration",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "text"
+                      }
                     }
                   ]
                 },
                 {
-                  "type": "SYMBOL",
-                  "name": "narration"
+                  "type": "FIELD",
+                  "name": "narration",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "text"
+                  }
                 }
               ]
             },
@@ -369,6 +389,31 @@
       "type": "PATTERN",
       "value": "\".+\""
     },
+    "event_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "event"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "text"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "SYMBOL",
+            "name": "text"
+          }
+        }
+      ]
+    },
     "balance_definition": {
       "type": "SEQ",
       "members": [
@@ -379,6 +424,27 @@
         {
           "type": "SYMBOL",
           "name": "account"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "amount"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "commodity"
+        }
+      ]
+    },
+    "price_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "price"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "commodity"
         },
         {
           "type": "SYMBOL",
@@ -482,27 +548,7 @@
       "type": "PATTERN",
       "value": "\".*\""
     },
-    "payee": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "\""
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "PATTERN",
-            "value": "."
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "\""
-        }
-      ]
-    },
-    "narration": {
+    "text": {
       "type": "SEQ",
       "members": [
         {
