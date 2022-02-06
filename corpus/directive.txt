@@ -95,6 +95,20 @@ Document Directive
     (filepath)))
 
 ==================
+Event Directive
+==================
+
+2014-07-09 event "location" "Paris, France"
+
+---
+
+(source_file
+  (date)
+  (event_definition
+    (text)
+    (text)))
+
+==================
 Balance Directive
 ==================
 
@@ -122,3 +136,18 @@ Pad Directive
   (pad_definition
     (account)
     (account)))
+
+==================
+Price Directive
+==================
+
+2014-07-09 price USD 1.08 CAD
+
+---
+
+(source_file
+  (date)
+  (price_definition
+    (commodity)
+    (amount)
+    (commodity)))

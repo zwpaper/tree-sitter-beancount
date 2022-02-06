@@ -84,4 +84,8 @@ poptag #this-is-a-tag
 2014-06-01 pad Assets:Cash Equity:Opening-Balances
 2014-06-02 balance Assets:Cash 100 USD
 
-2014-11-03 document Liabilities:CreditCard:CapitalTwo "/home/joe/stmts/apr-2014.pdf"
+2014-11-03 document Liabilities:CreditCard:CapitalTwo "./example-file"
+
+2014-07-09 price USD 1.08 CAD
+
+2014-07-09 event "location" "Paris, France"

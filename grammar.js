@@ -40,7 +40,9 @@ module.exports = grammar({
                 $.transaction_definition,
                 $.note_definition,
                 $.document_definition,
+                $.event_definition,
                 $.balance_definition,
+                $.price_definition,
                 $.pad_definition,
             ),
         ),
@@ -145,9 +147,22 @@ module.exports = grammar({
 
         filepath: $ => /".+"/,
 
+        event_definition: $ => seq(
+            'event',
+            field('name', $.text),
+            field('value', $.text),
+        ),
+
         balance_definition: $ => seq(
             'balance',
             $.account,
+            $.amount,
+            $.commodity
+        ),
+
+        price_definition: $ => seq(
+            'price',
+            $.commodity,
             $.amount,
             $.commodity
         ),
