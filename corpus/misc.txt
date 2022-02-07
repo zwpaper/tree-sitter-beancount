@@ -60,6 +60,7 @@ Push Tag
 ==================
 
 pushtag #tag
+
 ---
 
 (source_file
@@ -71,11 +72,62 @@ Pop Tag
 ==================
 
 poptag #tag
+
 ---
 
 (source_file
   (poptag_definition
     (tag)))
+
+==================
+Option
+==================
+
+option "title" "Ed’s Personal Ledger"
+
+---
+
+(source_file
+  (option_definition
+    (text)
+    (text)))
+
+==================
+Plugin without Config
+==================
+
+plugin "beancount.plugins.module_name"
+
+---
+
+(source_file
+  (plugin_definition
+    (text)))
+
+==================
+Plugin with Config
+==================
+
+plugin "beancount.plugins.module_name" "configuration data"
+
+---
+
+(source_file
+  (plugin_definition
+    (text)
+    (text)))
+
+==================
+Include
+==================
+
+include "path/to/include/file.beancount"
+
+---
+
+(source_file
+  (include_definition
+    (filepath)))
 
 ==================
 Metadata Support Commodity

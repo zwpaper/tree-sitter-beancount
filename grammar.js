@@ -17,8 +17,30 @@ module.exports = grammar({
 
         _definition: $ => choice(
             $._entry_definition,
+            $.option_definition,
+            $.plugin_definition,
+            $.include_definition,
             $.pushtag_definition,
             $.poptag_definition,
+        ),
+
+        option_definition: $ => seq(
+            'option',
+            field('name', $.text),
+            field('value', $.text),
+        ),
+
+        plugin_definition: $ => seq(
+            'plugin',
+            field('name', $.text),
+            optional(
+                field('config', $.text),
+            ),
+        ),
+
+        include_definition: $ => seq(
+            'include',
+            $.filepath,
         ),
 
         pushtag_definition: $ => seq(

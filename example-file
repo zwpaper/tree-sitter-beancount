@@ -1,3 +1,8 @@
+option "title" "Ed’s Personal Ledger"
+
+; plugin "beancount.plugins.module_name" "configuration data"
+; include "path/to/include/file.beancount"
+
 2014-02-03 open Assets:US:BofA:Checking
 2014/10/31 open Assets:US:BofA:Credit
 2014/01/01 open Assets:Cash
@@ -92,3 +97,4 @@ poptag #this-is-a-tag
 2014-07-09 price USD 1.08 CAD
 
 2014-07-09 event "location" "Paris, France"
+
