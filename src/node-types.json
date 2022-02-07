@@ -153,6 +153,21 @@
     }
   },
   {
+    "type": "include_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "filepath",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "metadata_definition",
     "named": true,
     "fields": {},
@@ -245,6 +260,32 @@
     }
   },
   {
+    "type": "option_definition",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "text",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "pad_definition",
     "named": true,
     "fields": {
@@ -268,6 +309,32 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "plugin_definition",
+    "named": true,
+    "fields": {
+      "config": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "text",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "text",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -406,6 +473,10 @@
           "named": true
         },
         {
+          "type": "include_definition",
+          "named": true
+        },
+        {
           "type": "metadata_definition",
           "named": true
         },
@@ -418,7 +489,15 @@
           "named": true
         },
         {
+          "type": "option_definition",
+          "named": true
+        },
+        {
           "type": "pad_definition",
+          "named": true
+        },
+        {
+          "type": "plugin_definition",
           "named": true
         },
         {
@@ -610,6 +689,10 @@
     "named": true
   },
   {
+    "type": "include",
+    "named": false
+  },
+  {
     "type": "link",
     "named": true
   },
@@ -630,7 +713,15 @@
     "named": false
   },
   {
+    "type": "option",
+    "named": false
+  },
+  {
     "type": "pad",
+    "named": false
+  },
+  {
+    "type": "plugin",
     "named": false
   },
   {

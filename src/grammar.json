@@ -17,11 +17,94 @@
         },
         {
           "type": "SYMBOL",
+          "name": "option_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "plugin_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "include_definition"
+        },
+        {
+          "type": "SYMBOL",
           "name": "pushtag_definition"
         },
         {
           "type": "SYMBOL",
           "name": "poptag_definition"
+        }
+      ]
+    },
+    "option_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "option"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "text"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "SYMBOL",
+            "name": "text"
+          }
+        }
+      ]
+    },
+    "plugin_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "plugin"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "text"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "config",
+              "content": {
+                "type": "SYMBOL",
+                "name": "text"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "include_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "include"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "filepath"
         }
       ]
     },
