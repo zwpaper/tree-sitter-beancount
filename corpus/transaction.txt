@@ -319,3 +319,42 @@ Transaction with Tags and Link
       (account)
       (amount)
       (commodity))))
+
+==================
+Transaction with metadata
+==================
+
+2014-06-01 *
+  statement: "confirmation-826453.pdf"
+  Assets:Investing:Apple       5 AAPL
+    decision: "scheduled"
+  Assets:Investing:Google       5 GOOL
+    empty:
+  Equity:Opening-Balances
+
+---
+
+(source_file
+  (date)
+  (transaction_definition
+    (txn)
+    (metadata_definition
+      (metadata_key)
+      (metadata_value
+        (text)))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (metadata_definition
+      (metadata_key)
+      (metadata_value
+        (text)))
+    (post_definition
+      (account)
+      (amount)
+      (commodity))
+    (metadata_definition
+      (metadata_key))
+    (post_definition
+      (account))))

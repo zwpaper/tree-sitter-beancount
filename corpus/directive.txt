@@ -12,6 +12,24 @@ Open Directive
     (account)))
 
 ==================
+Open with Metadata
+==================
+
+2014-02-03 open Assets:US:BofA:Checking
+  on: "open"
+
+---
+
+(source_file
+  (date)
+  (open_definition
+    (account))
+  (metadata_definition
+    (metadata_key)
+    (metadata_value
+      (text))))
+
+==================
 Open with Commodity Directive
 ==================
 

@@ -9,7 +9,7 @@ module.exports = grammar({
     ],
 
     conflicts: $ => [
-        [$.account, $.commodity],
+        [$.transaction_definition],
     ],
 
     rules: {
@@ -45,6 +45,9 @@ module.exports = grammar({
                 $.price_definition,
                 $.pad_definition,
                 $.custom_definition,
+            ),
+            repeat(
+                $.metadata_definition,
             ),
         ),
 
@@ -96,7 +99,10 @@ module.exports = grammar({
                 ),
             ),
             repeat(
-                $.post_definition,
+                choice(
+                    $.post_definition,
+                    $.metadata_definition,
+                ),
             )
         ),
 
@@ -204,6 +210,24 @@ module.exports = grammar({
             )
         ),
 
+        metadata_definition: $ => prec.left(
+            seq(
+                $.metadata_key,
+                ":",
+                optional(
+                    $.metadata_value,
+                ),
+            ),
+        ),
+        metadata_key: $ => /[a-z][a-zA-Z0-9-_]*/,
+        metadata_value: $ => choice(
+            $.text,
+            $.account,
+            $.commodity,
+            $.date,
+            $.tag,
+            $.amount,
+        ),
         _account_component: $ => /[A-Z0-9][a-zA-Z0-9-]*/,
         _booking_method: $ => choice(
             "STRICT",
