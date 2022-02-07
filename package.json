@@ -4,7 +4,7 @@
   "description": "Tree Sitter for Beancount",
   "main": "bindings/node",
   "scripts": {
-    "test": "tree-sitter generate && tree-sitter parse example-file"
+    "test": "tree-sitter generate && tree-sitter test"
   },
   "repository": {
     "type": "git",
