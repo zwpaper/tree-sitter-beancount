@@ -76,3 +76,75 @@ poptag #tag
 (source_file
   (poptag_definition
     (tag)))
+
+==================
+Metadata Support Commodity
+==================
+
+2014-02-03 open Assets:US:BofA:Checking
+  commodity: USD
+
+---
+
+(source_file
+  (date)
+  (open_definition
+    (account))
+  (metadata_definition
+    (metadata_key)
+    (metadata_value
+      (commodity))))
+
+==================
+Metadata Support Account
+==================
+
+2014-02-03 open Assets:US:BofA:Checking
+  open: Assets:US:BofA:Checking
+
+---
+
+(source_file
+  (date)
+  (open_definition
+    (account))
+  (metadata_definition
+    (metadata_key)
+    (metadata_value
+      (account))))
+
+==================
+Metadata Support Amount
+==================
+
+2014-02-03 open Assets:US:BofA:Checking
+  at: 12.34
+
+---
+
+(source_file
+  (date)
+  (open_definition
+    (account))
+  (metadata_definition
+    (metadata_key)
+    (metadata_value
+      (amount))))
+
+==================
+Metadata Support Tag
+==================
+
+2014-02-03 open Assets:US:BofA:Checking
+  on: #this-is-a-tag
+
+---
+
+(source_file
+  (date)
+  (open_definition
+    (account))
+  (metadata_definition
+    (metadata_key)
+    (metadata_value
+      (tag))))
