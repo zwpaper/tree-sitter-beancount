@@ -106,6 +106,13 @@
               "name": "custom_definition"
             }
           ]
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "metadata_definition"
+          }
         }
       ]
     },
@@ -249,8 +256,17 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "SYMBOL",
-            "name": "post_definition"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "post_definition"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "metadata_definition"
+              }
+            ]
           }
         }
       ]
@@ -564,6 +580,68 @@
         }
       ]
     },
+    "metadata_definition": {
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "metadata_key"
+          },
+          {
+            "type": "STRING",
+            "value": ":"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "metadata_value"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "metadata_key": {
+      "type": "PATTERN",
+      "value": "[a-z][a-zA-Z0-9-_]*"
+    },
+    "metadata_value": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "text"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "account"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "commodity"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "date"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "amount"
+        }
+      ]
+    },
     "_account_component": {
       "type": "PATTERN",
       "value": "[A-Z0-9][a-zA-Z0-9-]*"
@@ -660,8 +738,7 @@
   ],
   "conflicts": [
     [
-      "account",
-      "commodity"
+      "transaction_definition"
     ]
   ],
   "precedences": [],
